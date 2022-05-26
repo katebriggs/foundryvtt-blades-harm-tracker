@@ -16,7 +16,7 @@ class HarmTracker{
     
     static async onRenderPlayerList(app,html,data){
         for(var listItem of html.find("ol#player-list > li")){
-            var ui = renderTemplate("svg.html");
+            var ui = renderTemplate("svg.hbs");
             listItem.append(ui);            
         }
     }
