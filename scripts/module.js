@@ -1,5 +1,5 @@
 Hooks.once('init', async function() {
-
+    console.log("HELLO WORLD");
 });
 
 Hooks.once('ready', async function() {
