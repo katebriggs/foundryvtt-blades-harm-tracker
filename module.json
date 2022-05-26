@@ -1,6 +1,6 @@
 {
-  "name": "module",
-  "title": "New Module",
+  "name": "bitd-harm-tracker",
+  "title": "[Blades in the Dark] Harm Tracker UI",
   "description": "",
   "version": "This is auto replaced",
   "library": "false",
@@ -9,9 +9,8 @@
   "compatibleCoreVersion": "9",
   "authors": [
     {
-      "name": "The League of Extraordinary FVTT Developers",
-      "url": "https://github.com/League-of-Foundry-Developers",
-      "discord": "discordID#0001"
+      "name": "Kate Briggs",
+      "url": "https://github.com/katebriggs"
     }
   ],
   "dependencies": [
