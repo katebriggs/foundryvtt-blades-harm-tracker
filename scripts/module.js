@@ -13,12 +13,11 @@ class HarmTracker{
             console.log(HarmData(doc.data));
         }
     }
+    
     static async onRenderPlayerList(app,html,data){
         for(var listItem of html.find("ol#player-list > li")){
-            var button = document.createElement("button");
-            button.style.flex = "flex";
-            button.innerHTML = "Pog";
-            listItem.append(button);            
+            var ui = renderTemplate("svg.html");
+            listItem.append(ui);            
         }
     }
 }
