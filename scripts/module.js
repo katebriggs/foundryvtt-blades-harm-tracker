@@ -35,6 +35,7 @@ class HarmTracker{
                 var uiparent = document.createElement("span");
                 uiparent.class="harm-tracker-parent";
                 uiparent.setAttribute("data-bound-actor",user.data.character);
+                uiparent.addEventListener('click',HarmTracker.makeOnClickActorSheet(user.data.character));
                 listItem.append(uiparent);
                 
                 var ui = await renderTemplate("modules/bitd-harm-tracker/templates/svg.hbs",actor.data.data.harm);
@@ -43,6 +44,12 @@ class HarmTracker{
                 
                 HarmTracker.renderedIcons.push(uiparent);
             }
+        }
+    }
+
+    static makeOnClickActorSheet(actorId){
+        return function(){
+            ActorDirectory.collection.get(actorId).sheet.render(true);
         }
     }
 
