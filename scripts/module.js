@@ -18,25 +18,37 @@ class HarmTracker{
         return undefined;
     }
 
-    static async onUpdateActor(doc,changes,options,userId){
-        if(HarmData(changes)){
-            console.log(HarmData(doc.data));
-        }
-    }
-    
-    static async onRenderPlayerList(app,html,data){
-        for(var listItem of html.find("ol#player-list > li")){
+    static renderedIcons = [];
+
+    static async refreshHarmTracker(playerList){
+
+        HarmTracker.renderedIcons.forEach(ui => ui.remove());
+
+        for(var listItem of playerList){
             var userId = listItem.getAttribute("data-user-id");
             var user = Users.instance.get(userId);
             if('data' in user && 'character' in user.data){
                 if(!user.data.character) continue;
                 const actor = ActorDirectory.collection.get(user.data.character);
-                
-                var ui = await renderTemplate(this.TEMPLATES.SVG,actor.data.data.harm);
+                console.log(actor.data.data.harm);
+                var uiparent = document.createElement("span");
+                listItem.append(uiparent);
+                var ui = await renderTemplate("modules/bitd-harm-tracker/templates/svg.hbs",actor.data.data.harm);
                 ui = new Handlebars.SafeString(ui);
-                listItem.insertAdjacentHTML('beforeend',ui);
+                uiparent.insertAdjacentHTML('beforeend',ui);
+                HarmTracker.renderedIcons.push(uiparent);
             }
         }
+    }
+
+    static async onUpdateActor(doc,changes,options,userId){
+        if(HarmTracker.HarmData(changes)){
+            HarmTracker.refreshHarmTracker($("ol#player-list > li"));
+        }
+    }
+    
+    static async onRenderPlayerList(app,html,data){ 
+        HarmTracker.refreshHarmTracker(html.find("ol#player-list > li"));
     }
 }
 
@@ -48,7 +60,6 @@ Hooks.once('init', async function() {
 Hooks.once('ready', async function() {
 
 });
-
 
 Hooks.on('updateActor', HarmTracker.onUpdateActor);
 Hooks.on('renderPlayerList', HarmTracker.onRenderPlayerList);
