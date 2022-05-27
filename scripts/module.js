@@ -32,6 +32,7 @@ class HarmTracker{
                 const actor = ActorDirectory.collection.get(user.data.character);
                 console.log(actor.data.data.harm);
                 var uiparent = document.createElement("span");
+                uiparent.style.flex = 0.5;
                 listItem.append(uiparent);
                 var ui = await renderTemplate("modules/bitd-harm-tracker/templates/svg.hbs",actor.data.data.harm);
                 ui = new Handlebars.SafeString(ui);
