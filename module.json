@@ -14,7 +14,10 @@
     }
   ],
   "dependencies": [
-
+    {
+      "name":"blades-in-the-dark",
+      "type":"system"
+    }
   ],
   "conflicts": [
     
