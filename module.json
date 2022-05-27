@@ -15,13 +15,11 @@
   ],
   "dependencies": [
     {
-      "name":"blades-in-the-dark",
-      "type":"system"
+      "name": "blades-in-the-dark",
+      "type": "system"
     }
   ],
-  "conflicts": [
-    
-  ],
+  "conflicts": [],
   "esmodules": [
     "scripts/module.js"
   ],
