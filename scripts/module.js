@@ -33,7 +33,7 @@ class HarmTracker{
                 const actor = ActorDirectory.collection.get(user.data.character);
                 
                 var uiparent = document.createElement("span");
-                uiparent.class="harm-tracker-parent";
+                uiparent.setAttribute("class","harm-tracker-parent");
                 uiparent.setAttribute("data-bound-actor",user.data.character);
                 uiparent.addEventListener('click',HarmTracker.makeOnClickActorSheet(user.data.character));
                 listItem.append(uiparent);
