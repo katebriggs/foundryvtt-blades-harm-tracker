@@ -1,7 +1,12 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg"  class="harm-tracker" viewBox="0 0 10 10">
-    <rect x="5%"    y="1%"  ry="5%" width="90%"   height="25%" stroke="black" fill={{#if heavy.one}}"var(--color-text-light-highlight)"{{else}}"transparent"{{/if}} stroke-width="1%"></rect>
-    <rect x="5%"    y="30%" ry="5%" width="42.5%" height="30%" stroke="black" fill={{#if medium.one}}"var(--color-text-light-highlight)"{{else}}"transparent"{{/if}} stroke-width="1%"></rect>
-    <rect x="52.5%" y="30%" ry="5%" width="42.5%" height="30%" stroke="black" fill={{#if medium.two}}"var(--color-text-light-highlight)"{{else}}"transparent"{{/if}} stroke-width="1%"></rect>
-    <rect x="5%"    y="65%" ry="5%" width="42.5%" height="30%" stroke="black" fill={{#if light.one}}"var(--color-text-light-highlight)"{{else}}"transparent"{{/if}} stroke-width="1%"></rect>
-    <rect x="52.5%" y="65%" ry="5%" width="42.5%" height="30%" stroke="black" fill={{#if light.two}}"var(--color-text-light-highlight)"{{else}}"transparent"{{/if}} stroke-width="1%"></rect>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+    <rect x="5%"    y="1%"  ry="5%" width="90%"   height="25%" stroke="black" title={{heavy.one}}
+        fill={{#if heavy.one}}"var(--color-text-light-highlight)"{{else}}"transparent"{{/if}} stroke-width="1%"></rect>
+    <rect x="5%"    y="30%" ry="5%" width="42.5%" height="30%" stroke="black" title={{medium.one}}
+        fill={{#if medium.one}}"var(--color-text-light-highlight)"{{else}}"transparent"{{/if}} stroke-width="1%"></rect>
+    <rect x="52.5%" y="30%" ry="5%" width="42.5%" height="30%" stroke="black" title={{medium.two}}
+        fill={{#if medium.two}}"var(--color-text-light-highlight)"{{else}}"transparent"{{/if}} stroke-width="1%"></rect>
+    <rect x="5%"    y="65%" ry="5%" width="42.5%" height="30%" stroke="black" title={{light.one}}
+        fill={{#if light.one}}"var(--color-text-light-highlight)"{{else}}"transparent"{{/if}} stroke-width="1%"></rect>
+    <rect x="52.5%" y="65%" ry="5%" width="42.5%" height="30%" stroke="black" title={{light.two}}
+        fill={{#if light.two}}"var(--color-text-light-highlight)"{{else}}"transparent"{{/if}} stroke-width="1%"></rect>
 </svg>

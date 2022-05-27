@@ -28,15 +28,19 @@ class HarmTracker{
             var userId = listItem.getAttribute("data-user-id");
             var user = Users.instance.get(userId);
             if('data' in user && 'character' in user.data){
+                
                 if(!user.data.character) continue;
                 const actor = ActorDirectory.collection.get(user.data.character);
-                console.log(actor.data.data.harm);
+                
                 var uiparent = document.createElement("span");
-                uiparent.style.flex = 0.5;
+                uiparent.class="harm-tracker-parent";
+                uiparent.setAttribute("data-bound-actor",user.data.character);
                 listItem.append(uiparent);
+                
                 var ui = await renderTemplate("modules/bitd-harm-tracker/templates/svg.hbs",actor.data.data.harm);
                 ui = new Handlebars.SafeString(ui);
                 uiparent.insertAdjacentHTML('beforeend',ui);
+                
                 HarmTracker.renderedIcons.push(uiparent);
             }
         }
