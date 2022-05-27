@@ -1,7 +1,7 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <rect x="5%"    y="1%"  ry="5%" width="90%"   height="25%" stroke="black" fill="black" stroke-width="1%" data-harm-type="heavy-one"></rect>
-    <rect x="5%"    y="30%" ry="5%" width="42.5%" height="30%" stroke="black" fill="black" stroke-width="1%" data-harm-type="medium-one"></rect>
-    <rect x="52.5%" y="30%" ry="5%" width="42.5%" height="30%" stroke="black" fill="black" stroke-width="1%" data-harm-type="medium-two"></rect>
-    <rect x="5%"    y="65%" ry="5%" width="42.5%" height="30%" stroke="black" fill="black" stroke-width="1%" data-harm-type="light-one"></rect>
-    <rect x="52.5%" y="65%" ry="5%" width="42.5%" height="30%" stroke="black" fill="black" stroke-width="1%" data-harm-type="light-two"></rect>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg"  class="harm-tracker" viewBox="0 0 10 10">
+    <rect x="5%"    y="1%"  ry="5%" width="90%"   height="25%" stroke="black" {{#if data.harm.heavy.one}}fill="black"{{/if}} stroke-width="1%"></rect>
+    <rect x="5%"    y="30%" ry="5%" width="42.5%" height="30%" stroke="black" {{#if data.harm.medium.one}}fill="black"{{/if}} stroke-width="1%" data-harm-type="medium-one"></rect>
+    <rect x="52.5%" y="30%" ry="5%" width="42.5%" height="30%" stroke="black" {{#if data.harm.medium.two}}fill="black"{{/if}} stroke-width="1%" data-harm-type="medium-two"></rect>
+    <rect x="5%"    y="65%" ry="5%" width="42.5%" height="30%" stroke="black" {{#if data.harm.light.one}}fill="black"{{/if}} stroke-width="1%" data-harm-type="light-one"></rect>
+    <rect x="52.5%" y="65%" ry="5%" width="42.5%" height="30%" stroke="black" {{#if data.harm.light.two}}fill="black"{{/if}} stroke-width="1%" data-harm-type="light-two"></rect>
 </svg>
